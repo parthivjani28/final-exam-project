@@ -1,0 +1,17 @@
+name: Print Exam File
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  print-file-content:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Print exam-info.txt content
+      run: cat exam-info.txt
